@@ -8,7 +8,7 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → [ ]
 
-string[] array1 = new string[6] {"Hello", "2", "world", "-)", "1234", "-2"};
+string[] array1 = new string[8] {"Hello", "Russia", "356", "computer science", "world", "-)", "1234", "-2"};
 
 PrintArray(array1);
 
@@ -17,7 +17,8 @@ void PrintArray(string[] array)
 	Console.Write("[");
 	for (int i = 0; i < array.Length; i++)
 	{
-		Console.Write($"{array[i],5} ");
+		if (i < array.Length - 1) Console.Write($"{array[i], 5}, ");
+		else Console.Write($"{array[i]}");
 	}
 	Console.Write("]");
 }
