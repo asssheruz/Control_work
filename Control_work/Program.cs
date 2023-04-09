@@ -8,3 +8,17 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → [ ]
 
+string[] array1 = new string[6] {"Hello", "2", "world", "-)", "1234", "-2"};
+
+PrintArray(array1);
+
+void PrintArray(string[] array)
+{
+	Console.Write("[");
+	for (int i = 0; i < array.Length; i++)
+	{
+		Console.Write($"{array[i],5} ");
+	}
+	Console.Write("]");
+}
+
