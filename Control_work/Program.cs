@@ -8,18 +8,32 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → [ ]
 
-string[] array1 = new string[8] {"Hello", "Russia", "356", "computer science", "world", "-)", "1234", "-2"};
-
+string[] array1 = new string[8] { "Hello", "Russia", "356", "day", "world", "-)", "1234", "-2" };
+string[] array2 = new string[array1.Length];
 PrintArray(array1);
+SecondArray(array1, array2);
+Console.WriteLine();
+PrintArray(array2);
+
+void SecondArray(string[] array1, string[] array2)
+{
+	int count = 0;
+	for (int i = 0; i < array1.Length; i++)
+	{
+		if (array1[i].Length <= 3)
+		{
+			array2[count] = array1[i];
+			count++;
+		}
+	}
+}
 
 void PrintArray(string[] array)
 {
-	Console.Write("[");
 	for (int i = 0; i < array.Length; i++)
 	{
-		if (i < array.Length - 1) Console.Write($"{array[i], 5}, ");
-		else Console.Write($"{array[i]}");
+		Console.Write($"{array[i]}\t ");
 	}
-	Console.Write("]");
+	Console.WriteLine();
 }
 
